@@ -150,5 +150,9 @@ export default {
   bills_not_expected: 'Nicht erwartet',
   transaction_form_bill_label: 'Rechnung',
   configuration_transaction_form: 'Transaktionsformular',
-  close_after_transaction: 'Schließe das Transaktionsformular nach dem Einreichen'
+  close_after_transaction: 'Transaktionsformular nach Einreichen schließen',
+
+  // from 0.19.0
+  configuration_theme: 'Anpassung',
+  configuration_theme_selection: 'Farbthema ändern',
 };
