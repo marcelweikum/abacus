@@ -44,6 +44,7 @@ function AssetsAccounts() {
   const displayAllAccounts = useSelector((state: RootState) => state.configuration.displayAllAccounts);
   const loading = useSelector((state: RootState) => state.loading.effects.accounts.getAccounts?.loading);
   const dispatch = useDispatch<RootDispatch>();
+  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle);
 
   const onSwitch = async (bool: boolean) => {
     dispatch.configuration.setDisplayAllAccounts(bool);
@@ -98,7 +99,7 @@ function AssetsAccounts() {
           <AText fontSize={25} lineHeight={27} style={{ margin: 15 }} bold>
             {displayAllAccounts ? translate('home_all_accounts') : translate('home_accounts')}
           </AText>
-          <Switch style={{ marginHorizontal: 10 }} thumbColor="white" trackColor={{ false: '#767577', true: colors.brandStyle }} onValueChange={onSwitch} value={displayAllAccounts} />
+          <Switch style={{ marginHorizontal: 10 }} thumbColor="white" trackColor={{ false: '#767577', true: selectedBrandStyle }} onValueChange={onSwitch} value={displayAllAccounts} />
         </AStack>
         <AStack px={5} row justifyContent="space-between">
           <View style={{ flex: 1, alignItems: 'flex-start', paddingLeft: '5%' }}>
@@ -106,7 +107,7 @@ function AssetsAccounts() {
               <MaterialCommunityIcons
                 name="sort"
                 size={22}
-                color={lastPressed === 'left' ? colors.primary : colors.text}
+                color={lastPressed === 'left' ? selectedBrandStyle : colors.text}
               />
             </TouchableOpacity>
           </View>
@@ -115,7 +116,7 @@ function AssetsAccounts() {
               <MaterialCommunityIcons
                 name="sort"
                 size={22}
-                color={lastPressed === 'right' ? colors.primary : colors.text}
+                color={lastPressed === 'right' ? selectedBrandStyle : colors.text}
                 style={{ transform: [{ scaleX: -1 }] }}
               />
             </TouchableOpacity>
@@ -538,6 +539,11 @@ export default function HomeScreen() {
   const end = useSelector((state: RootState) => state.firefly.rangeDetails.end);
   const currentCode = useSelector((state: RootState) => state.currencies.currentCode);
   const dispatch = useDispatch<RootDispatch>();
+  const selectedTheme = useSelector((state: RootState) => state.configuration.selectedTheme);
+  const lightSelectedColor = colors[`${selectedTheme}Light`];
+  const darkSelectedColor = colors[`${selectedTheme}Dark`];
+  const gradientColors = colorScheme === 'light' ? lightSelectedColor : darkSelectedColor;
+
   const renderIcons = [
     <Ionicons key="wallet" name="wallet" size={22} color={colors.text} />,
     <Ionicons key="pricetag" name="pricetags" size={22} color={colors.text} />,
@@ -593,7 +599,7 @@ export default function HomeScreen() {
   return (useMemo(() => (
     <AView style={{ flex: 1 }}>
       <LinearGradient
-        colors={colorScheme === 'light' ? ['gradientOrangeLight1', 'gradientOrangeLight2', 'gradientOrangeLight3', 'gradientOrangeLight4'] : ['gradientOrangeDark1', 'gradientOrangeDark2', 'gradientOrangeDark3', 'gradientOrangeDark4']}
+        colors={gradientColors}
         start={{ x: 0, y: 1 }}
         end={{ x: 1, y: 0 }}
         style={{ minHeight: 250 + safeAreaInsets.top, paddingTop: safeAreaInsets.top }}
