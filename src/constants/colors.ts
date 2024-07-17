@@ -23,6 +23,18 @@ export default {
   blurAndroidHeader: 'rgba(40,40,40,0.16)',
   brandNeutralFix: '#e3e3e3',
   greyLight: '#6c6c6c',
+
+  // New gradient colors
+  gradientOrangeLight1: 'rgb(255,211,195)',
+  gradientOrangeLight2: 'rgb(255,194,183)',
+  gradientOrangeLight3: 'rgb(248,199,193)',
+  gradientOrangeLight4: 'rgb(255,228,194)',
+
+  gradientOrangeDark1: '#790277',
+  gradientOrangeDark2: '#d30847',
+  gradientOrangeDark3: '#FF5533',
+  gradientOrangeDark4: '#efe96d',
+
   dark: {
     text: 'white',
     textOpposite: 'black',
