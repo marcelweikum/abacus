@@ -5,7 +5,7 @@ export default {
   brandStyle70: 'rgba(175,175,175,0.7)',
   brandStyle20: 'rgba(203,203,203,0.4)',
   brandStyleSecond: '#ff6443',
-  brandStyle0: '#FF5533',
+  brandStyle0: '#7F00FF',
   brandStyle1: '#BEA6A0',
   brandStyle2: '#56423D',
   brandStyle3: '#3FA500',
@@ -25,15 +25,63 @@ export default {
   greyLight: '#6c6c6c',
 
   // New gradient colors
-  gradientOrangeLight1: 'rgb(255,211,195)',
-  gradientOrangeLight2: 'rgb(255,194,183)',
-  gradientOrangeLight3: 'rgb(248,199,193)',
-  gradientOrangeLight4: 'rgb(255,228,194)',
+  gradientOrangeLight: ['rgb(255,211,195)', 'rgb(255,194,183)', 'rgb(248,199,193)', 'rgb(255,228,194)'],
+  gradientOrangeDark: ['#790277', '#d30847', '#FF5533', '#efe96d'],
 
-  gradientOrangeDark1: '#790277',
-  gradientOrangeDark2: '#d30847',
-  gradientOrangeDark3: '#FF5533',
-  gradientOrangeDark4: '#efe96d',
+  gradientBlueLight: ['rgb(195,211,255)', 'rgb(183,194,255)', 'rgb(193,199,248)', 'rgb(194,228,255)'],
+  gradientBlueDark: ['#027790', '#0847d3', '#3355FF', '#6d96ef'],
+
+  gradientGreenLight: ['rgb(195,255,211)', 'rgb(183,255,194)', 'rgb(193,248,199)', 'rgb(194,255,228)'],
+  gradientGreenDark: ['#028a3d', '#03c464', '#2ecc71', '#7fdcae'],
+
+  gradientPurpleLight: ['rgb(225,195,255)', 'rgb(215,183,255)', 'rgb(223,193,248)', 'rgb(230,194,255)'],
+  gradientPurpleDark: ['#570290', '#8408d3', '#A933FF', '#be6def'],
+
+  gradientYellowLight: ['rgb(255,251,195)', 'rgb(255,248,183)', 'rgb(248,245,193)', 'rgb(255,255,194)'],
+  gradientYellowDark: ['#c9a601', '#ffcc00', '#ffd700', '#ffe56e'],
+
+  gradientPinkLight: ['rgb(255,195,233)', 'rgb(255,183,227)', 'rgb(248,193,235)', 'rgb(255,194,240)'],
+  gradientPinkDark: ['#902757', '#d3089c', '#FF33A8', '#ef6d96'],
+
+  gradientTealLight: ['rgb(195,255,251)', 'rgb(183,255,248)', 'rgb(193,248,245)', 'rgb(194,255,255)'],
+  gradientTealDark: ['#027c79', '#08b3a3', '#33FFDD', '#6defef'],
+
+  gradientRedLight: ['rgb(255,195,195)', 'rgb(255,183,183)', 'rgb(248,193,193)', 'rgb(255,194,194)'],
+  gradientRedDark: ['#7c0202', '#d30808', '#FF3333', '#ef6d6d'],
+
+  gradientBrownLight: ['rgb(210,180,140)', 'rgb(222,184,135)', 'rgb(139,69,19)', 'rgb(160,82,45)'],
+  gradientBrownDark: ['#4e2602', '#6b3a00', '#a0522d', '#cd7f32'],
+
+  gradientCyanLight: ['rgb(195,255,255)', 'rgb(183,255,255)', 'rgb(193,248,248)', 'rgb(194,255,255)'],
+  gradientCyanDark: ['#027a7a', '#08b3b3', '#33FFFF', '#6defff'],
+
+  gradientMintLight: ['rgb(195,255,245)', 'rgb(183,255,239)', 'rgb(193,248,240)', 'rgb(194,255,250)'],
+  gradientMintDark: ['#027a6b', '#08b386', '#33FFAA', '#6defc3'],
+
+  gradientLavenderLight: ['rgb(235,195,255)', 'rgb(223,183,255)', 'rgb(233,193,248)', 'rgb(244,194,255)'],
+  gradientLavenderDark: ['#6a0290', '#a308d3', '#D633FF', '#d66def'],
+
+  gradientGoldLight: ['rgb(255,231,195)', 'rgb(255,223,183)', 'rgb(248,219,193)', 'rgb(255,238,194)'],
+  gradientGoldDark: ['#907202', '#d3a008', '#FFB533', '#e6bc5d'],
+
+  gradientPeachLight: ['rgb(255,213,195)', 'rgb(255,203,183)', 'rgb(248,209,193)', 'rgb(255,218,194)'],
+  gradientPeachDark: ['#906502', '#d38908', '#FF8833', '#e6a55d'],
+
+  // New accent colors
+  brandStyleOrange: '#FF5533',
+  brandStyleBlue: '#3355FF',
+  brandStyleGreen: '#2ecc71',
+  brandStylePurple: '#A933FF',
+  brandStyleYellow: '#ffd700',
+  brandStylePink: '#FF33A8',
+  brandStyleTeal: '#33FFDD',
+  brandStyleRed: '#FF3333',
+  brandStyleBrown: '#a0522d',
+  brandStyleCyan: '#33FFFF',
+  brandStyleMint: '#33FFAA',
+  brandStyleLavender: '#D633FF',
+  brandStyleGold: '#FFB533',
+  brandStylePeach: '#FF8833',
 
   dark: {
     text: 'white',
