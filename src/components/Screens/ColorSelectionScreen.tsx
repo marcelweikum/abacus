@@ -1,10 +1,8 @@
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, Dimensions, useColorScheme } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { RootDispatch, RootState } from '../../store';
-import { useThemeColors } from '../../lib/common';
 import colors from '../../constants/colors';
 
 const themes = [
@@ -53,6 +51,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+    alignItems: 'center',
   },
   colorTile: {
     width: tileSize,
@@ -64,7 +63,10 @@ const styles = StyleSheet.create({
   },
   selectedTile: {
     borderWidth: 2,
-    borderColor: 'black',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+    elevation: 5,
   },
 });
 
@@ -72,6 +74,8 @@ export default function ColorSelectionScreen() {
   const currentTheme = useSelector((state: RootState) => state.configuration.selectedTheme || 'gradientOrange');
   const dispatch = useDispatch<RootDispatch>();
   const navigation = useNavigation();
+  const colorScheme = useColorScheme();
+  const highlightColor = colorScheme === 'dark' ? 'white' : 'black';
 
   const handleColorSelect = (theme: string) => {
     const selectedBrandStyle = themeToBrandStyle[theme];
@@ -81,14 +85,14 @@ export default function ColorSelectionScreen() {
   };
 
   return (
-    <View style={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-around' }}>
+    <View style={styles.container}>
       {themes.map((theme) => (
         <TouchableOpacity
           key={theme}
           style={[
             styles.colorTile,
             { backgroundColor: themeToBrandStyle[theme] },
-            currentTheme === theme && styles.selectedTile,
+            currentTheme === theme && [styles.selectedTile, { borderColor: highlightColor, shadowColor: highlightColor }],
           ]}
           onPress={() => handleColorSelect(theme)}
         />
