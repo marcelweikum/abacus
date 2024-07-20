@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, FlatList, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -8,37 +8,39 @@ import { useThemeColors } from '../../lib/common';
 import colors from '../../constants/colors';
 
 const themes = [
-  'gradientPeach',
-  'gradientGold',
-  'gradientOrange',
-  'gradientYellow',
-  'gradientMint',
-  'gradientTeal',
-  'gradientGreen',
-  'gradientCyan',
-  'gradientLavender',
-  'gradientPurple',
-  'gradientPink',
   'gradientRed',
-  'gradientBrown',
+  'gradientOrange',
+  'gradientLightOrange',
+  'gradientGold',
+  'gradientYellow',
+  'gradientLightYellow',
+  'gradientDarkGreen',
+  'gradientGreen',
+  'gradientMint',
   'gradientBlue',
+  'gradientTeal',
+  'gradientCyan',
+  'gradientPurple',
+  'gradientLavender',
+  'gradientPink',
 ];
 
 const themeToBrandStyle = {
-  gradientPeach: colors.brandStylePeach,
-  gradientGold: colors.brandStyleGold,
-  gradientOrange: colors.brandStyleOrange,
-  gradientYellow: colors.brandStyleYellow,
-  gradientMint: colors.brandStyleMint,
-  gradientTeal: colors.brandStyleTeal,
-  gradientGreen: colors.brandStyleGreen,
-  gradientCyan: colors.brandStyleCyan,
-  gradientLavender: colors.brandStyleLavender,
-  gradientPurple: colors.brandStylePurple,
-  gradientPink: colors.brandStylePink,
   gradientRed: colors.brandStyleRed,
-  gradientBrown: colors.brandStyleBrown,
+  gradientOrange: colors.brandStyleOrange,
+  gradientLightOrange: colors.brandStyleLightOrange,
+  gradientGold: colors.brandStyleGold,
+  gradientYellow: colors.brandStyleYellow,
+  gradientLightYellow: colors.brandStyleLightYellow,
+  gradientDarkGreen: colors.brandStyleDarkGreen,
+  gradientGreen: colors.brandStyleGreen,
+  gradientMint: colors.brandStyleMint,
   gradientBlue: colors.brandStyleBlue,
+  gradientTeal: colors.brandStyleTeal,
+  gradientCyan: colors.brandStyleCyan,
+  gradientPurple: colors.brandStylePurple,
+  gradientLavender: colors.brandStyleLavender,
+  gradientPink: colors.brandStylePink,
 };
 
 const { width } = Dimensions.get('window');
@@ -46,9 +48,11 @@ const numColumns = 3;
 const tileSize = (width - (numColumns + 1) * 10) / numColumns;
 
 const styles = StyleSheet.create({
-  grid: {
-    paddingHorizontal: 5,
-    justifyContent: 'center',
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
   },
   colorTile: {
     width: tileSize,
@@ -65,10 +69,8 @@ const styles = StyleSheet.create({
 });
 
 export default function ColorSelectionScreen() {
-  const { colors: themeColors } = useThemeColors();
   const currentTheme = useSelector((state: RootState) => state.configuration.selectedTheme || 'gradientOrange');
   const dispatch = useDispatch<RootDispatch>();
-  const insets = useSafeAreaInsets();
   const navigation = useNavigation();
 
   const handleColorSelect = (theme: string) => {
@@ -79,23 +81,18 @@ export default function ColorSelectionScreen() {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: themeColors.backgroundColor, paddingTop: insets.top }}>
-      <FlatList
-        data={themes}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={[
-              styles.colorTile,
-              { backgroundColor: themeToBrandStyle[item] },
-              currentTheme === item && styles.selectedTile,
-            ]}
-            onPress={() => handleColorSelect(item)}
-          />
-        )}
-        keyExtractor={(item) => item}
-        numColumns={numColumns}
-        contentContainerStyle={styles.grid}
-      />
+    <View style={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-around' }}>
+      {themes.map((theme) => (
+        <TouchableOpacity
+          key={theme}
+          style={[
+            styles.colorTile,
+            { backgroundColor: themeToBrandStyle[theme] },
+            currentTheme === theme && styles.selectedTile,
+          ]}
+          onPress={() => handleColorSelect(theme)}
+        />
+      ))}
     </View>
   );
 }

@@ -25,63 +25,67 @@ export default {
   greyLight: '#6c6c6c',
 
   // New gradient colors
+  gradientRedLight: ['rgb(255,170,170)', 'rgb(255,158,158)', 'rgb(250,173,173)', 'rgb(255,174,174)'],
+  gradientRedDark: ['#7c0202', '#d30808', '#FF3333', '#ef6d6d'],
+
   gradientOrangeLight: ['rgb(255,211,195)', 'rgb(255,194,183)', 'rgb(248,199,193)', 'rgb(255,228,194)'],
   gradientOrangeDark: ['#790277', '#d30847', '#FF5533', '#efe96d'],
 
-  gradientBlueLight: ['rgb(195,211,255)', 'rgb(183,194,255)', 'rgb(193,199,248)', 'rgb(194,228,255)'],
-  gradientBlueDark: ['#027790', '#0847d3', '#3355FF', '#6d96ef'],
+  gradientLightOrangeLight: ['rgb(255,230,205)', 'rgb(255,220,190)', 'rgb(255,210,180)', 'rgb(255,220,200)'],
+  gradientLightOrangeDark: ['#ffa07a', '#ff8c00', '#ff7f50', '#ff6347'],
+
+  gradientGoldLight: ['rgb(205,173,0)', 'rgb(218,165,32)', 'rgb(238,221,130)', 'rgb(255,215,0)'],
+  gradientGoldDark: ['#b8860b', '#d2b48c', '#daa520', '#ffd700'],
+
+  gradientYellowLight: ['rgb(255,255,150)', 'rgb(255,255,120)', 'rgb(255,255,100)', 'rgb(255,255,180)'],
+  gradientYellowDark: ['#ffeb3b', '#fdd835', '#fbc02d', '#f9a825'],
+
+  gradientLightYellowLight: ['rgb(255,255,230)', 'rgb(255,255,210)', 'rgb(255,255,190)', 'rgb(255,255,220)'],
+  gradientLightYellowDark: ['#ebebd3', '#ebebc1', '#e4e4ab', '#ececcb'],
+
+  gradientDarkGreenLight: ['rgb(195,225,195)', 'rgb(183,210,183)', 'rgb(193,218,193)', 'rgb(194,230,194)'],
+  gradientDarkGreenDark: ['#014d00', '#026200', '#038200', '#059900'],
 
   gradientGreenLight: ['rgb(195,255,211)', 'rgb(183,255,194)', 'rgb(193,248,199)', 'rgb(194,255,228)'],
   gradientGreenDark: ['#028a3d', '#03c464', '#2ecc71', '#7fdcae'],
 
-  gradientPurpleLight: ['rgb(225,195,255)', 'rgb(215,183,255)', 'rgb(223,193,248)', 'rgb(230,194,255)'],
-  gradientPurpleDark: ['#570290', '#8408d3', '#A933FF', '#be6def'],
+  gradientMintLight: ['#E5FFF5', '#D4FFEB', '#C3FFE1', '#B2FFE7', '#A1FFE3', '#90FFE9', '#7FFFE5', '#6FFFE1', '#5FFFD7', '#33FFAA'],
+  gradientMintDark: ['#027a6b', '#08b386', '#33FFAA', '#6defc3'],
 
-  gradientYellowLight: ['rgb(255,251,195)', 'rgb(255,248,183)', 'rgb(248,245,193)', 'rgb(255,255,194)'],
-  gradientYellowDark: ['#c9a601', '#ffcc00', '#ffd700', '#ffe56e'],
-
-  gradientPinkLight: ['rgb(255,195,233)', 'rgb(255,183,227)', 'rgb(248,193,235)', 'rgb(255,194,240)'],
-  gradientPinkDark: ['#902757', '#d3089c', '#FF33A8', '#ef6d96'],
+  gradientBlueLight: ['rgb(195,211,255)', 'rgb(183,194,255)', 'rgb(193,199,248)', 'rgb(194,228,255)'],
+  gradientBlueDark: ['#027790', '#0847d3', '#3355FF', '#6d96ef'],
 
   gradientTealLight: ['rgb(195,255,251)', 'rgb(183,255,248)', 'rgb(193,248,245)', 'rgb(194,255,255)'],
   gradientTealDark: ['#027c79', '#08b3a3', '#33FFDD', '#6defef'],
 
-  gradientRedLight: ['rgb(255,195,195)', 'rgb(255,183,183)', 'rgb(248,193,193)', 'rgb(255,194,194)'],
-  gradientRedDark: ['#7c0202', '#d30808', '#FF3333', '#ef6d6d'],
-
-  gradientBrownLight: ['rgb(210,180,140)', 'rgb(222,184,135)', 'rgb(139,69,19)', 'rgb(160,82,45)'],
-  gradientBrownDark: ['#4e2602', '#6b3a00', '#a0522d', '#cd7f32'],
-
   gradientCyanLight: ['rgb(195,255,255)', 'rgb(183,255,255)', 'rgb(193,248,248)', 'rgb(194,255,255)'],
   gradientCyanDark: ['#027a7a', '#08b3b3', '#33FFFF', '#6defff'],
 
-  gradientMintLight: ['rgb(195,255,245)', 'rgb(183,255,239)', 'rgb(193,248,240)', 'rgb(194,255,250)'],
-  gradientMintDark: ['#027a6b', '#08b386', '#33FFAA', '#6defc3'],
+  gradientPurpleLight: ['rgb(225,195,255)', 'rgb(215,183,255)', 'rgb(223,193,248)', 'rgb(230,194,255)'],
+  gradientPurpleDark: ['#570290', '#8408d3', '#A933FF', '#be6def'],
 
   gradientLavenderLight: ['rgb(235,195,255)', 'rgb(223,183,255)', 'rgb(233,193,248)', 'rgb(244,194,255)'],
   gradientLavenderDark: ['#6a0290', '#a308d3', '#D633FF', '#d66def'],
 
-  gradientGoldLight: ['rgb(255,231,195)', 'rgb(255,223,183)', 'rgb(248,219,193)', 'rgb(255,238,194)'],
-  gradientGoldDark: ['#907202', '#d3a008', '#FFB533', '#e6bc5d'],
-
-  gradientPeachLight: ['rgb(255,213,195)', 'rgb(255,203,183)', 'rgb(248,209,193)', 'rgb(255,218,194)'],
-  gradientPeachDark: ['#906502', '#d38908', '#FF8833', '#e6a55d'],
+  gradientPinkLight: ['rgb(255,195,233)', 'rgb(255,183,227)', 'rgb(248,193,235)', 'rgb(255,194,240)'],
+  gradientPinkDark: ['#902757', '#d3089c', '#FF33A8', '#ef6d96'],
 
   // New accent colors
-  brandStyleOrange: '#FF5533',
-  brandStyleBlue: '#3355FF',
-  brandStyleGreen: '#2ecc71',
-  brandStylePurple: '#A933FF',
-  brandStyleYellow: '#ffd700',
-  brandStylePink: '#FF33A8',
-  brandStyleTeal: '#33FFDD',
   brandStyleRed: '#FF3333',
-  brandStyleBrown: '#a0522d',
-  brandStyleCyan: '#33FFFF',
+  brandStyleOrange: '#FF5533',
+  brandStyleLightOrange: '#ff8c00',
+  brandStyleGold: '#DCA519',
+  brandStyleYellow: '#ffec3d',
+  brandStyleLightYellow: '#EEEEBA',
+  brandStyleDarkGreen: '#038200',
+  brandStyleGreen: '#2ecc71',
   brandStyleMint: '#33FFAA',
+  brandStyleBlue: '#3355FF',
+  brandStyleTeal: '#2EE2C4',
+  brandStyleCyan: '#2BE2E2',
+  brandStylePurple: '#A933FF',
   brandStyleLavender: '#D633FF',
-  brandStyleGold: '#FFB533',
-  brandStylePeach: '#FF8833',
+  brandStylePink: '#FF33A8',
 
   dark: {
     text: 'white',
