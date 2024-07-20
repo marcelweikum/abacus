@@ -54,7 +54,7 @@ export default function AInput({
 }: AInputType) {
   const { colors } = useThemeColors();
   const [isFocused, setIsFocused] = React.useState(false);
-  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle);
+  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle || colors.brandStyleOrange);
   const handleFocus = (focusState: boolean, callback: () => void) => {
     setIsFocused(focusState);
     callback();

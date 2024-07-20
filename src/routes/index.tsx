@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
 function TabBarPrimaryButton() {
   const navigation = useNavigation();
   const { colors } = useThemeColors();
-  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle);
+  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle || colors.brandStyleOrange);
 
   return (
     <AStack justifyContent="flex-start">
@@ -227,7 +227,7 @@ function PrimaryButtonComponent() {
 
 function Home() {
   const { colors } = useThemeColors();
-  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle);
+  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle || colors.brandStyleOrange);
 
   return (
     <>

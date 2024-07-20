@@ -44,7 +44,7 @@ function AssetsAccounts() {
   const displayAllAccounts = useSelector((state: RootState) => state.configuration.displayAllAccounts);
   const loading = useSelector((state: RootState) => state.loading.effects.accounts.getAccounts?.loading);
   const dispatch = useDispatch<RootDispatch>();
-  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle);
+  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle || colors.brandStyleOrange);
 
   const onSwitch = async (bool: boolean) => {
     dispatch.configuration.setDisplayAllAccounts(bool);
@@ -539,7 +539,7 @@ export default function HomeScreen() {
   const end = useSelector((state: RootState) => state.firefly.rangeDetails.end);
   const currentCode = useSelector((state: RootState) => state.currencies.currentCode);
   const dispatch = useDispatch<RootDispatch>();
-  const selectedTheme = useSelector((state: RootState) => state.configuration.selectedTheme);
+  const selectedTheme = useSelector((state: RootState) => state.configuration.selectedTheme || 'gradientOrange');
   const lightSelectedColor = colors[`${selectedTheme}Light`];
   const darkSelectedColor = colors[`${selectedTheme}Dark`];
   const gradientColors = colorScheme === 'light' ? lightSelectedColor : darkSelectedColor;

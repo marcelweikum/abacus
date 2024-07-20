@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
 
 export default function ColorSelectionScreen() {
   const { colors: themeColors } = useThemeColors();
-  const currentTheme = useSelector((state: RootState) => state.configuration.selectedTheme);
+  const currentTheme = useSelector((state: RootState) => state.configuration.selectedTheme || 'gradientOrange');
   const dispatch = useDispatch<RootDispatch>();
   const insets = useSafeAreaInsets();
   const navigation = useNavigation();

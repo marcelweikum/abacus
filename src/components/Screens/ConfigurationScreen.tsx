@@ -37,7 +37,7 @@ export default function ConfigurationScreen({ navigation }: ScreenType) {
   const backendURL = useSelector((state: RootState) => state.configuration.backendURL);
   const useBiometricAuth = useSelector((state: RootState) => state.configuration.useBiometricAuth);
   const dispatch = useDispatch<RootDispatch>();
-  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle);
+  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle || colors.brandStyleOrange);
   const {
     configuration: {
       setUseBiometricAuth,

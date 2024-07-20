@@ -31,7 +31,7 @@ export default function AButton({
   testID = null,
 }: AButtonType) {
   const { colors } = useThemeColors();
-  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle);
+  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle || colors.brandStyleOrange);
   const backgroundColor = type === 'primary' ? selectedBrandStyle : colors[type];
 
   return (

@@ -13,7 +13,7 @@ import translate from '../../i18n/locale';
 
 export default function FilterScreen({ navigation, route }: ScreenType) {
   const { colors } = useThemeColors();
-  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle);
+  const selectedBrandStyle = useSelector((state: RootState) => state.configuration.selectedBrandStyle || colors.brandStyleOrange);
   const {
     filterType,
     selectFilter,
