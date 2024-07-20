@@ -540,8 +540,8 @@ export default function HomeScreen() {
   const currentCode = useSelector((state: RootState) => state.currencies.currentCode);
   const dispatch = useDispatch<RootDispatch>();
   const selectedTheme = useSelector((state: RootState) => state.configuration.selectedTheme || 'gradientOrange');
-  const lightSelectedColor = colors[`${selectedTheme}Light`];
-  const darkSelectedColor = colors[`${selectedTheme}Dark`];
+  const lightSelectedColor = colors[`${selectedTheme}Light`] || colors.gradientOrangeLight;
+  const darkSelectedColor = colors[`${selectedTheme}Dark`] || colors.gradientOrangeDark;
   const gradientColors = colorScheme === 'light' ? lightSelectedColor : darkSelectedColor;
 
   const renderIcons = [
