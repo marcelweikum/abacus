@@ -148,6 +148,7 @@ export default {
   home_piggy_banks: 'Piggy Banks',
   bills_paid: 'Paid until',
   due_by: 'Due by',
+  date_unavailable: 'further notice',
   bills_not_expected: 'Not expected',
   transaction_form_bill_label: 'Bill',
   configuration_transaction_form: 'Transaction Form',
