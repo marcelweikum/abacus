@@ -299,8 +299,12 @@ function InsightBudgets() {
 }
 
 function formatDate(date) {
+  if (!date) {
+    return translate('date_unavailable');
+  }
   const momentDate = moment(date);
-  return momentDate.isValid() ? momentDate.format('LL') : 'Invalid Date';
+  const formattedDate = momentDate.isValid() ? momentDate.format('LL') : translate('date_unavailable');
+  return formattedDate;
 }
 
 function Bills() {
@@ -334,7 +338,6 @@ function Bills() {
         const amountMin = parseFloat(bill.attributes.amountMin);
         const percentagePaid = (amountPaid / amountMin) * 100;
         const isPaid = amountPaid >= amountMin;
-        const statusColor = isPaid ? colors.green : (moment(bill.attributes.nextExpectedMatch).diff(moment(), 'days') < 0 ? colors.brandWarning : colors.brandStyle4);
 
         const statusText = isPaid
           ? `${translate('bills_paid')} ${formatDate(bill.attributes.nextExpectedMatch)}`
@@ -398,7 +401,6 @@ function Bills() {
     </AScrollView>
   );
 }
-
 
 function PiggyBanks() {
   const { colors } = useThemeColors();
